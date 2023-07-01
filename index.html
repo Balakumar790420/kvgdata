@@ -14,45 +14,47 @@
 </head>
 
 <body>
-    </div>
-    <div class="container mt-5">
-        <figure class="text-center mt-3">
-            <blockquote class="blockquote">
-                <h4>Karur VG Trusted People<i class="fa-solid fa-heart" style="color: rgb(25, 202, 25);"></i><i class="fa-solid fa-heart" style="color: gainsboro;"></i><i class="fa-solid fa-heart" style="color: red;"></i></h4>
-            </blockquote>
-            <figcaption class="blockquote-footer">
-                ஒன்றுபட்டால் உண்டு வாழ்வு
-            </figcaption>
-        </figure>
-        <hr>
-        <form name="submit-to-google-sheet" class="m-5">
-            <div class="form-floating mb-3">
+<div class="container col-lg-12">    <form name="submit-to-google-sheet" class="container justify-content-md-center">
+        <div class="container mt-10">
+            <figure class="text-center col-lg-12">
+                <blockquote class="blockquote">
+                    <h4 class="mt-10">Karur VG Trusted People<br><i class="fa-solid fa-heart" style="color: rgb(25, 202, 25);"></i><i
+                            class="fa-solid fa-heart" style="color: gainsboro;"></i><i class="fa-solid fa-heart"
+                            style="color: red;"></i></h4>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    ஒன்றுபட்டால் உண்டு வாழ்வு
+                </figcaption>
+            </figure>
+            
+
+            <div class="form-floating mb-1">
                 <input type="text" class="form-control" id="floatingInput" name="First Name" placeholder="First Name"
                     required>
                 <label for="floatingInput">First Name</label>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-1">
                 <input type="text" class="form-control" id="floatingInput" name="Last Name" placeholder="Last Name"
                     required>
                 <label for="floatingInput">Last Name</label>
             </div>
 
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-1">
                 <input type="text" class="form-control" id="floatingInput" name="Contact" placeholder="Contact"
                     required>
                 <label for="floatingInput">Contact</label>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-1">
                 <input type="text" class="form-control" id="floatingInput" name="Instagram ID"
                     placeholder="Instagram ID" required>
                 <label for="floatingInput">Instagram ID</label>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-1">
                 <input type="text" class="form-control" id="floatingInput" name="District" placeholder="Your District"
                     required>
                 <label for="floatingInput">District</label>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-1">
                 <input type="text" class="form-control" id="floatingInput" name="Occupation" placeholder="Occupation"
                     required>
                 <label for="floatingInput">Occupation</label>
@@ -66,26 +68,26 @@
             <div class="d-grid gap-2 d-md-flex justify-content-md-center">
                 <div id="liveAlertPlaceholder"></div>
                 <div class="button">
-                    <i class="fa-solid fa-circle-notch icon spinner"></i><button type="submit" class="btn btn2"><span class="btn-text" user-selcect="none">Submit</span></button>
-                    
+                    <i class="fa-solid fa-circle-notch icon spinner"></i><button type="submit" class="btn btn2"><span
+                            class="btn-text" user-selcect="none">Submit</span></button>
+
                 </div>
-        </div>
+            </div>
             <div class="gap-2 d-md-flex justify-content-md-center mt-3 ">
                 <span class="text-primary" id="msg"></span>
             </div>
             <figcaption class="blockquote-footer mt-2">
                 Please check the details before clicking submit button.
             </figcaption>
-            </div>
-    </div>
+        </div>
+        </div>
     </form>
+</div>
 
-    </div>
-    </div>
     <script>
         let btn = document.querySelector(".button"),
-                spinIcon = document.querySelector(".spinner"),
-                btnText = document.querySelector(".btn-text");
+            spinIcon = document.querySelector(".spinner"),
+            btnText = document.querySelector(".btn-text");
 
         const scriptURL = 'https://script.google.com/macros/s/AKfycbz3ZOVRKnzsB1ysT4iInzx91TVb1VK2-HCSCybZxVXzOPwKLQkJSslZRyEUf5xqHYHl/exec'
         const form = document.forms['submit-to-google-sheet']
@@ -103,10 +105,10 @@
             alertPlaceholder.append(wrapper)
         }
         btn.addEventListener("click", () => {
-                btn.style.cursor = "wait";
-                btn.classList.add("checked");
-                spinIcon.classList.add("spin");
-                btnText.textContent = "Loading";
+            btn.style.cursor = "wait";
+            btn.classList.add("checked");
+            spinIcon.classList.add("spin");
+            btnText.textContent = "Loading";
 
             setTimeout(() => {
                 btn.style.pointerEvents = "none";
@@ -114,8 +116,8 @@
                 spinIcon.classList.replace("fa-circle-notch", "fa-check");
                 btnText.textContent = "Done";
 
-            }, 5000) 
-            });
+            }, 5000)
+        });
 
         form.addEventListener('submit', e => {
             e.preventDefault()
