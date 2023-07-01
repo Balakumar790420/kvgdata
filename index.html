@@ -83,25 +83,9 @@
 </div>
 
     <script>
-        let btn = document.querySelector(".button"),
-            spinIcon = document.querySelector(".spinner"),
-            btnText = document.querySelector(".btn-text");
-
         const scriptURL = 'https://script.google.com/macros/s/AKfycbz3ZOVRKnzsB1ysT4iInzx91TVb1VK2-HCSCybZxVXzOPwKLQkJSslZRyEUf5xqHYHl/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg")
-        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-        const appendAlert = (message, type) => {
-            const wrapper = document.createElement('div')
-            wrapper.innerHTML = [
-                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-                `   <div>${message}</div>`,
-                '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-                '</div>'
-            ].join('')
-
-            alertPlaceholder.append(wrapper)
-        }
         form.addEventListener('submit', e => {
             e.preventDefault()
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
