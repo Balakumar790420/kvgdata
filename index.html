@@ -66,10 +66,8 @@
             </div>
 
             <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                <div id="liveAlertPlaceholder"></div>
                 <div class="button">
-                    <i class="fa-solid fa-circle-notch icon spinner"></i><button type="submit" class="btn btn2"><span
-                            class="btn-text" user-selcect="none">Submit</span></button>
+                    <button type="submit" class="btn btn2">submit</button>
 
                 </div>
             </div>
@@ -104,21 +102,6 @@
 
             alertPlaceholder.append(wrapper)
         }
-        btn.addEventListener("click", () => {
-            btn.style.cursor = "wait";
-            btn.classList.add("checked");
-            spinIcon.classList.add("spin");
-            btnText.textContent = "Loading";
-
-            setTimeout(() => {
-                btn.style.pointerEvents = "none";
-                spinIcon.classList.replace("spinner", "check");
-                spinIcon.classList.replace("fa-circle-notch", "fa-check");
-                btnText.textContent = "Done";
-
-            }, 5000)
-        });
-
         form.addEventListener('submit', e => {
             e.preventDefault()
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
